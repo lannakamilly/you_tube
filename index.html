@@ -1,4 +1,3 @@
-<!-- Lanna Kamilly Fres Mota -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,8 +14,8 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #000;
+      background-color: #0f0f0f;
+      color: white;
     }
 
     header {
@@ -24,10 +23,10 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #333;
       position: sticky;
       top: 0;
-      background: #fff;
+      background: #0f0f0f;
       z-index: 1000;
     }
 
@@ -40,10 +39,11 @@
     .left-header i {
       font-size: 20px;
       cursor: pointer;
+      color: white;
     }
 
     .logo {
-      height: 25px;
+      height: 40px;
     }
 
     .br {
@@ -62,22 +62,26 @@
     .search-bar input {
       flex: 1;
       padding: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid #444;
       border-right: none;
       border-radius: 20px 0 0 20px;
+      background: #121212;
+      color: white;
     }
 
     .search-bar button {
       padding: 8px 16px;
-      background-color: #f8f8f8;
-      border: 1px solid #ccc;
+      background-color: #222;
+      border: 1px solid #444;
       border-radius: 0 20px 20px 0;
       cursor: pointer;
+      color: white;
     }
 
     .right-header i {
       font-size: 18px;
       cursor: pointer;
+      color: white;
     }
 
     .profile {
@@ -95,53 +99,52 @@
 
     aside {
       width: 240px;
-      border-right: 1px solid #ccc;
+      border-right: 1px solid #333;
       padding: 15px;
-      background-color: #fff;
+      background-color: #0f0f0f;
       height: 100vh;
       position: sticky;
       top: 60px;
+      color: white;
     }
 
-   aside nav li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-  font-size: 15px;
-  cursor: pointer;
-  padding: 6px 10px;
-}
+    aside nav li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 6px 10px;
+    }
 
-aside nav li i {
-  font-size: 20px;
-  width: 24px;
-  text-align: center;
-}
+    aside nav li i {
+      font-size: 20px;
+      width: 24px;
+      text-align: center;
+    }
 
-aside nav li.active {
-  background-color: #272727;
-  padding: 8px 12px;
-  border-radius: 12px;
-  color: white;
-}
+    aside nav li.active {
+      background-color: #272727;
+      padding: 8px 12px;
+      border-radius: 12px;
+      color: white;
+    }
 
-.live-dot,
-.new-dot {
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  margin-left: auto;
-}
+    .live-dot, .new-dot {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      margin-left: auto;
+    }
 
-.live-dot {
-  background-color: red;
-}
+    .live-dot {
+      background-color: red;
+    }
 
-.new-dot {
-  background-color: #3ea6ff;
-}
-
+    .new-dot {
+      background-color: #3ea6ff;
+    }
 
     aside p {
       font-weight: bold;
@@ -169,13 +172,20 @@ aside nav li.active {
     }
 
     .categories button {
-      background-color: #f0f0f0;
+      background-color: #272727;
       border: none;
       padding: 6px 12px;
       border-radius: 16px;
       cursor: pointer;
       font-size: 14px;
       white-space: nowrap;
+      color: white;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .categories button:hover {
+      background-color: #fff;
+      color: #000;
     }
 
     .videos {
@@ -186,16 +196,28 @@ aside nav li.active {
 
     .video {
       position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .video:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     }
 
     .video img {
       width: 100%;
       border-radius: 12px;
+      display: block;
     }
 
     .video p {
       font-weight: bold;
       margin-top: 8px;
+      color: white;
     }
 
     .video span {
@@ -215,10 +237,28 @@ aside nav li.active {
       border-radius: 4px;
     }
 
+    .play-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .video:hover .play-overlay {
+      opacity: 1;
+    }
+
     .ad-banner {
-      background: #f8f8f8;
+      background: #222;
       padding: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid #444;
       text-align: center;
       font-weight: bold;
       border-radius: 12px;
@@ -229,7 +269,7 @@ aside nav li.active {
   <header>
     <div class="left-header">
       <i class="fas fa-bars"></i>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube Logo" class="logo">
+      <img src="./img/y.png" alt="YouTube Logo" class="logo">
       <span class="br">BR</span>
     </div>
     <div class="search-bar">
@@ -245,33 +285,32 @@ aside nav li.active {
   </header>
 
   <div class="main-content">
-  <aside>
-  <nav>
-    <ul>
-      <li class="active"><i class="fas fa-home"></i> Início</li>
-      <li><i class="fas fa-bolt"></i> Shorts</li>
-      <li><i class="fas fa-folder"></i> Inscrições <span class="new-dot"></span></li>
-    </ul>
+    <aside>
+      <nav>
+        <ul>
+          <li class="active"><i class="fas fa-home"></i> Início</li>
+          <li><i class="fas fa-bolt"></i> Shorts</li>
+          <li><i class="fas fa-folder"></i> Inscrições <span class="new-dot"></span></li>
+        </ul>
+        <p>Você <i class="fas fa-chevron-right" style="font-size: 12px; margin-left: 5px;"></i></p>
+        <ul>
+          <li><i class="fas fa-history"></i> Histórico</li>
+          <li><i class="fas fa-list"></i> Playlists</li>
+          <li><i class="fas fa-play"></i> Seus vídeos</li>
+          <li><i class="fas fa-clock"></i> Assistir mais tarde</li>
+          <li><i class="fas fa-thumbs-up"></i> Gostei</li>
+        </ul>
+        <p>Inscrições</p>
+        <ul>
+          <li><img src="https://yt3.googleusercontent.com/ytc/AIdro_mATwlHTYphitKRkpBumKTGDT0c2-aAsO-OupcNhQhjaw=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Color Bird TV <span class="live-dot"></span></li>
+          <li><img src="https://yt3.googleusercontent.com/4qWGcVZbhUhZAdL7BIecx_ir3-xHP-hP8MvaYh8UXXIsFp-6pMuyfO9rCKhC69QDkHp-L5KYXMk=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Bebefinn <span class="live-dot"></span></li>
+          <li><img src="https://yt3.googleusercontent.com/_lhHKK8BeR4NsIL5KRusKpCPjP4_f-XTYPuYG_GDvPdkuHyCXJpnxrC5lyTw0G2-MPdI-ZkW=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Web Design Mastery</li>
+            <li><img src="https://yt3.googleusercontent.com/JcgteYl_lHXIF2RY5BR4WXZd2uFNAW_dO3mZEx3nURLJX1DpFwWdhZEC01U3ZXprn5qNfHGw=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Carol Borba</li>
+            <li><img src="https://www.shutterstock.com/editorial/image-editorial/M6T6U80dMaD6Id1fNzg2MTY=/american-influencer-model-vinnie-hacker-arrives-8th-440nw-15252508ac.jpg" class="channel-icon"> Vinnie Hacker</li>
+        </ul>
+      </nav>
+    </aside>
 
-    <p>Você <i class="fas fa-chevron-right" style="font-size: 12px; margin-left: 5px;"></i></p>
-    <ul>
-      <li><i class="fas fa-history"></i> Histórico</li>
-      <li><i class="fas fa-list"></i> Playlists</li>
-      <li><i class="fas fa-play"></i> Seus vídeos</li>
-      <li><i class="fas fa-clock"></i> Assistir mais tarde</li>
-      <li><i class="fas fa-thumbs-up"></i> Vídeos com "Gostei"</li>
-    </ul>
-
-    <p>Inscrições</p>
-    <ul>
-      <li><img src="https://yt3.googleusercontent.com/ytc/AIdro_mATwlHTYphitKRkpBumKTGDT0c2-aAsO-OupcNhQhjaw=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Color Bird TV <span class="live-dot"></span></li>
-      <li><img src="https://yt3.googleusercontent.com/4qWGcVZbhUhZAdL7BIecx_ir3-xHP-hP8MvaYh8UXXIsFp-6pMuyfO9rCKhC69QDkHp-L5KYXMk=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Bebefinn em Por... <span class="live-dot"></span></li>
-      <li><img src="https://yt3.googleusercontent.com/_lhHKK8BeR4NsIL5KRusKpCPjP4_f-XTYPuYG_GDvPdkuHyCXJpnxrC5lyTw0G2-MPdI-ZkW=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Web Design Mastery</li>
-      <li><img src="https://yt3.googleusercontent.com/JcgteYl_lHXIF2RY5BR4WXZd2uFNAW_dO3mZEx3nURLJX1DpFwWdhZEC01U3ZXprn5qNfHGw=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Carol Borba <span class="new-dot"></span></li>
-      <li><img src="https://yt3.googleusercontent.com/UEXniZSwAf8dEsR4FdjbYxalHPuEzeSGJImviQoGGKK2aCHVul8jWvpHk8VQJF09_37jjyMe-A=s160-c-k-c0x00ffffff-no-rj" class="channel-icon"> Jorge & Mateus <span class="new-dot"></span></li>
-    </ul>
-  </nav>
-</aside>
     <main>
       <div class="categories">
         <button>All</button>
@@ -289,41 +328,46 @@ aside nav li.active {
         <div class="video">
           <img src="https://i.ytimg.com/vi/2ahGdv-m2NU/maxresdefault.jpg" alt="Video 1">
           <div class="live-badge">AO VIVO</div>
+          <div class="play-overlay"><i class="fas fa-play"></i>&nbsp; Reproduzir tudo</div>
           <p>Judô Mundial AO VIVO</p>
           <span>CazéTV - 3.1K assistindo</span>
         </div>
 
         <div class="video">
-          <img src="./img/Captura de tela 2025-06-17 152204.png" alt="Video 2">
+          <img src="./img/Captura de tela 2025-06-17 160312.png" alt="Video 2">
+          <div class="play-overlay"><i class="fas fa-play"></i>&nbsp; Reproduzir tudo</div>
           <p>Mix - Selena Gomez</p>
           <span>6ee, Ryu, D Santana e mais</span>
         </div>
 
-       <div class="video" style="position: relative;">
+        <div class="video">
+          <img src="https://i.ytimg.com/vi/qPhnXrSSyCg/hq720.jpg" alt="Video 3">
+          <div class="live-badge">AO VIVO</div>
+          <div class="play-overlay"><i class="fas fa-play"></i>&nbsp; Reproduzir tudo</div>
+          <p>Valorant Masters - Final</p>
+          <span>VALORANT BR - 4.5K assistindo</span>
+        </div>
+
+          <div class="video" style="position: relative;">
     <img src="https://i.ytimg.com/vi/gr37wF8Eyt0/maxresdefault.jpg" alt="Anúncio">
     <p>Patrocinado - Curso Web Completo</p>
     <span>Domine HTML, CSS e JavaScript hoje!</span>
     <span style="position: absolute; top: 10px; left: 10px; background-color: yellow; color: black; padding: 2px 6px; border-radius: 4px; font-size: 12px;">Anúncio</span>
   </div>
-
+  
         <div class="video">
-          <img src="https://i.ytimg.com/vi/qPhnXrSSyCg/hq720.jpg" alt="Video 3">
-          <div class="live-badge">AO VIVO</div>
-          <p>Valorant Masters - Final</p>
-          <span>VALORANT BR - 4.5K assistindo</span>
-        </div>
-
-        <div class="video">
-          <img src="https://i.ytimg.com/vi/n5wxZ_OBUXk/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAXsW5zEASNy4SdXLXE70EUpqizKA" alt="Video 4">
+          <img src="https://i.ytimg.com/vi/n5wxZ_OBUXk/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAXsW5zEASNy4SdXLXE70EUpqizKA" alt="Video 3">
+          <div class="play-overlay"><i class="fas fa-play"></i>&nbsp; Reproduzir tudo</div>
           <p>Top 10 Melhores Músicas 2024</p>
           <span>Canal Música Mix - 1.2M views</span>
         </div>
-
-        <div class="video">
-          <img src="https://i.ytimg.com/vi/EAjQNcH9ug0/maxresdefault.jpg" alt="Video 5">
+          <div class="video">
+          <img src="https://i.ytimg.com/vi/EAjQNcH9ug0/maxresdefault.jpg" alt="Video 3">
+          <div class="play-overlay"><i class="fas fa-play"></i>&nbsp; Reproduzir tudo</div>
           <p>Gatos engraçados em 10 minutos</p>
           <span>FunnyCats - 2.4M views</span>
         </div>
+      </div>
       </div>
     </main>
   </div>
